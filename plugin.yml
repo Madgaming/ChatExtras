@@ -1,0 +1,195 @@
+author: Zetaeta
+database: false
+description: Adds a few useful and fun chat features.
+generator: http://dinnerbone.com/minecraft/tools/pluginator/
+main: net.zetaeta.plugins.chatextras.ChatExtras
+name: ChatExtras
+startup: postworld
+version: '1.4'
+commands:
+    colour:
+        description: Changes your chat colour.
+        usage: |
+            /<command> <colour | random | reset>
+        aliases: [color, clr]
+        
+    line:
+        description: Constructs a completely new line of text to broadcast to the server
+        usage: |
+            /<command> <message>
+        aliases: [ln]
+    
+    nick:
+        description: Changes one's display name
+        usage: |
+            /<command> [player] <name>
+    
+    unnick:
+        description: Resets one's display name
+        usage: |
+            /<command> [player]
+    
+    name:
+        description: Sets what comes before a player's chat
+        usage: |
+            /<command> [player] <name>
+        
+    unname:
+        description: Resets what comes before a player's chat
+        usage: |
+            /<command> [player]
+        
+    chat:
+        description: Starts a private chat with a person
+        usage: |
+            /<command> [player] [message]
+        aliases: [chatwith, pm]
+        
+    chatextras:
+        usage: |
+            /<command> <reload | version>
+        
+permissions: 
+    chatextras.colour.simple:
+        default: false
+        description: Allows one to change one's chat colour.
+    chatextras.colour.random:
+        default: false
+        description: Allows use of /colour random for a random colour.
+    chatextras.colour.reset:
+        default: false
+        description: Allows one to reset one's colour.
+    chatextras.colour.k:
+        default: false
+        description: Allows use of &k in normal chat.
+    chatextras.colour.rainbow:
+        default: false
+        description: Allows use of /colour rainbow
+    chatextras.line:
+        default: false
+        description: Allows construction af a complete chat line.
+    chatextras.nick:
+        default: false
+        description: Allows one to change one's display name.
+    chatextras.nick.other:
+        default: false
+        description: Allows one to change someone else's display name.
+    chatextras.unnick:
+        default: false
+        description: Allows one to reset one's display name.
+    chatextras.unnick.other:
+        default: false
+        description: Allows one to reset someone else's display name.
+    chatextras.name:
+        default: false
+        description: Allows one to change what comes before one's name.
+    chatextras.name.other:
+        default: false
+        description: Allows one to change what comes before someone's name.
+    chatextras.unname:
+        default: false
+        description: Allows one to reset what comes before one's name.
+    chatextras.unname.other:
+        default: false
+        description: Allows one to reset what comes before someone's name.
+    chatextras.chat:
+        default: false
+        description: Alllows one to chat with another.
+    chatextras.reload:
+        default: false
+        description: Allows use of /chatextras reload.
+        
+    chatextras.colour.own.*:
+        default: false
+        children:
+            chatextras.colour.simple: true
+            chatextras.colour.random: true
+            chatextras.colour.reset: true
+            chatextras.colour.k: true
+            chatextras.colour.rainbow: true
+            
+    chatextras.colour.*:
+        default: false
+        children:
+            chatextras.colour.own.*: true
+            chatextras.colour.simple.other: true
+            chatextras.colour.random.other: true
+            chatextras.colour.reset.other: true
+            chatextras.colour.rainbow.other: true
+            
+    chatextras.nick.*:
+        default: false
+        children:
+            chatextras.nick: true
+            chatextras.nick.other: true
+            
+    chatextras.unnick.*:
+        default: false
+        children:
+            chatextras.unnick.own: true
+            chatextras.unnick.other: true
+            
+    chatextras.nicks:
+        default: false
+        children: 
+            chatextras.nick: true
+            chatextras.unnick: true
+            
+    chatextras.nicks.other:
+        default: false
+        children: 
+            chatextras.nick.other: true
+            chatextras.unnick.other: true
+            
+    chatextras.nicks.*:
+        default: false
+        children:
+            chatextras.nicks.other: true
+            chatextras.nicks: true
+    
+    chatextras.name.*:
+        default: false
+        children:
+            chatextras.name: true
+            chatextras.name.other: true
+            
+    chatextras.unname.*:
+        default: false
+        children:
+            chatextras.unname: true
+            chatextras.unname.other: true
+            
+    chatextras.names:
+        default: false
+        children:
+            chatextras.name: true
+            chatextras.unname: true
+    
+    chatextras.names.other:
+        default: false
+        children:
+            chatextras.name.other: true
+            chatextras.unname.other: true
+    
+    chatextras.names.*:
+        default: false
+        children:
+            chatextras.name: true
+            chatextras.unname: true
+            chatextras.name.other: true
+            chatextras.unname.other: true
+
+    chatextras.use.*:
+        default: op
+        children:
+            chatextras.nicks.*: true
+            chatextras.colour.*: true
+            chatextras.line: true
+            chatextras.names.*: true
+            chatextras.chat: true
+         
+    chatextras.*:
+        default: op
+        children:
+            chatextras.use.*: true
+            chatextras.reload: true
