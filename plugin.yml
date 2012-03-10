@@ -5,7 +5,7 @@ generator: http://dinnerbone.com/minecraft/tools/pluginator/
 main: net.zetaeta.plugins.chatextras.ChatExtras
 name: ChatExtras
 startup: postworld
-version: '1.4'
+version: '1.5'
 commands:
     colour:
         description: Changes your chat colour.

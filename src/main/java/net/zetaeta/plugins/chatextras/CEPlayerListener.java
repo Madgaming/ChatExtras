@@ -11,7 +11,7 @@ import org.bukkit.event.player.PlayerLoginEvent;
 
 import in.mDev.MiracleM4n.mChatSuite.mChatSuite;
 
-import static net.zetaeta.plugins.libraries.CEUtil.*;
+import static net.zetaeta.plugins.libraries.ZPUtil.*;
 
 
 public class CEPlayerListener implements Listener {

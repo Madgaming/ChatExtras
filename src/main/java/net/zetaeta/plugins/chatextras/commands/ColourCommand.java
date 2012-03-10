@@ -3,7 +3,7 @@ package net.zetaeta.plugins.chatextras.commands;
 import net.zetaeta.plugins.chatextras.ChatExtras;
 import net.zetaeta.plugins.libraries.commands.Executor;
 
-import static net.zetaeta.plugins.libraries.CEUtil.*;
+import static net.zetaeta.plugins.libraries.ZPUtil.*;
 
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
